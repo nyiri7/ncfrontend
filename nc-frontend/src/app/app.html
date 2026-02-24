@@ -1,6 +1,27 @@
-<div class="row">
-  <div class="col-12">
-    <h1 class="text-center">N</h1>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+<div class="container-fluid" style="background-color: var(--bs-primary);">
+  <div class="row g-2">
+    @if(validCode){
+      <div class="col-12 text-center">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-weight: bold;">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Report</a></li>
+            <li><a class="dropdown-item" href="#">Party</a></li>
+            <li><a class="dropdown-item" href="/users">People</a></li>
+          </ul>
+        </div>
+      </div>
+
+    }@else{
+      <div class="col-12">
+        <div class="input-group mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Code" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="code" (change)="codeChange()">
+        </div>
+      </div>
+    }
   </div>
 </div>
 <router-outlet />

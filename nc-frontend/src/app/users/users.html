@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        @if (fetched) {
+            @for (user of users; track $index) {
+                <div class="col-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src={{m}} class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{user.name}}</h5>
+                            <p class="card-text">Money: {{user.money}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }@else {
+            <div class="d-flex justify-content-center mt-3">
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <span >Fetching data...</span>
+            </div>
+        }
+
+    </div>
+</div>
