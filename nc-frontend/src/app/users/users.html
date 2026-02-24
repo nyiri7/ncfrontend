@@ -3,7 +3,7 @@
         @if (fetched) {
             @for (user of users; track $index) {
                 <div class="col-md-2">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="userModal">
                         <img src={{m}} class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{user.name}}</h5>
