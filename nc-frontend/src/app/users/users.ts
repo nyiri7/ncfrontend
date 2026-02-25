@@ -19,6 +19,7 @@ export class Users {
   ngOnInit() {
     this.userService.get_Users().subscribe({
       next: (Inpusers) => {
+        console.log('itt');
         this.users = Inpusers;
         this.fetched = true;
       },
