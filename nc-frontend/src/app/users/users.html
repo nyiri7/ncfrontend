@@ -8,6 +8,9 @@
     </div>
 }@else {
     <div class="container-fluid">
+        <div class="row p-3">
+            <button class="btn btn-primary" (click)="selectUser(newUser)">New user</button>
+        </div>
         <div class="row">
             @if (fetched()) {
                 @for (user of users; track $index) {

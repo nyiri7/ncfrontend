@@ -1,4 +1,5 @@
-<div class="container-fluid">
+@if (fetched()) {
+    <div class="container-fluid">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="Name" [(ngModel)]="fetchedUser.name">
         <label for="floatingInput">Name</label>
@@ -16,3 +17,16 @@
         <label for="floatingInput">Party</label>
     </div>
 </div> 
+<div class="container-fluid">
+    <div class="row p-3">
+        {{fetchedUser.id}}
+        @if (fetchedUser.id=="") {
+            <button class="btn btn-primary" (click)="createUser()">Create</button>
+        }@else {
+            <button class="btn btn-secondary ms-2" (click)="updateUser()">Update</button>
+        }
+    </div>
+</div>
+}@else {
+
+}
