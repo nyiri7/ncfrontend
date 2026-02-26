@@ -38,10 +38,12 @@ export class User {
       this.userService.create_User(this.fetchedUser!).subscribe({
         next: (response: UserModel) => {
           this.fetchedUser=response;
+          console.log(this.fetchedUser);
           this.fetched.set(true);
         },
         error:(error) => {
           this.fetched.set(true);
+          console.error("Error creating user:", error);
         }
       });
     }

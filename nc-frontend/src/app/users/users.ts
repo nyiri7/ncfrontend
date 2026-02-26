@@ -43,4 +43,8 @@ export class Users {
     this.selectedUser = user;
     this.openDetials.set(!this.openDetials());
   }
+  closeDetails() {
+    this.openDetials.set(false);
+    this.selectedUser = null;
+  }
 }
