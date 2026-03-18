@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {backend} from '../app.config';
 import { UserModel } from '../models/user';
 @Injectable({
@@ -18,5 +18,9 @@ export class UserService {
   }
   update_User(inp:UserModel) {
     return this.http.put<UserModel>(this.path, inp);
+  }
+  getCode(adminCode: string) {
+    const headers = new HttpHeaders().set('X-Admin-Code', adminCode);
+    return this.http.get(backend + 'code', { headers });
   }
 }

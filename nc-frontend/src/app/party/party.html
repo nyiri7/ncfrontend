@@ -1,1 +1,29 @@
-<p>party works!</p>
+<div class="container-fluid">
+    <div class="row g-2">
+        <div class="col-12 mb-3 mt-3 card p-2">
+            <div class="row">
+                <div class="col-2">
+                    <button class="btn btn-danger">End party</button>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-10">
+                            <select class="form-select" aria-label="Default select example" #selectDropdown (change)="selectUser(selectDropdown.value)">
+                                @if (fetchedUser()) {
+                                    <option value="">Select a user</option>
+                                    @for (u of usersFree; track $index) {
+                                        <option value={{u.id}}>{{u.name}}</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-secondary">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
