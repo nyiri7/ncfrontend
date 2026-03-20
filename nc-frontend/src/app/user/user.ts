@@ -52,6 +52,7 @@ export class User {
       this.fetched.set(false);
       this.userService.update_User(this.fetchedUser!).subscribe({
         next: (response: UserModel) => {
+          console.log(response);
           this.fetchedUser=response;
           this.fetched.set(true);
         },
