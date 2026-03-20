@@ -5,3 +5,8 @@ export interface UserModel{
     current_party_id:string;
     money:string;
 }
+
+export interface userMoney{
+  user: UserModel;
+  money: number;
+}

@@ -2,10 +2,8 @@
     <div class="row g-2">
         <div class="col-12 mb-3 mt-3 card p-2">
             <div class="row">
-                <div class="col-2">
-                    <button class="btn btn-danger">End party</button>
-                </div>
-                <div class="col-8">
+                <div class="col-1"></div>
+                <div class="col-10">
                     <div class="row">
                         <div class="col-10">
                             <select class="form-select" aria-label="Default select example" #selectDropdown (change)="selectUser(selectDropdown.value)">
@@ -18,12 +16,43 @@
                             </select>
                         </div>
                         <div class="col-2">
-                            <button class="btn btn-secondary">Add</button>
+                            <button class="btn btn-secondary" (click)="AddUser()">Add</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-1"></div>
             </div>
         </div>
     </div>
+    @if (this.users.length >0) {
+        <div class="row">
+            <ul class="list-group">
+                @for (item of users; track $index) {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-10">
+                                <h1>{{item.user.name}}</h1>
+                            <div class="row">
+                                <p>Old money: {{item.user.money}}</p>
+                            </div>
+                        </div>
+                            <div class="col-2">
+                                <button class="btn btn-danger" (click)="removeUser(item)">Remove</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="number" name="" id="" class="form-control" placeholder="Money" [(ngModel)]="item.money">
+                        </div>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    }@else{
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>No users in this party</h3>
+            </div>
+        </div>
+    }
 </div>
