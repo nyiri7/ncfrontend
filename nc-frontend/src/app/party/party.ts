@@ -74,7 +74,6 @@ export class Party {
     const user = this.usersFree.find(u => u.id === userId);
     if (user) {
       this.selectedUser = user;
-      console.log('Selected user:', user);
     }
   }
 
@@ -84,9 +83,11 @@ export class Party {
       this.partyService.put_AddUserToParty(this.partyV, this.selectedUser).subscribe({
         next: (response) => {
           console.log('User added to party:', response);
+          this.refreshUsers();
         },
         error: (error) => {
           console.error('Error adding user to party:', error);
+          this.refreshUsers();
         }
       });
       console.log(this.selectedUser)

@@ -10,5 +10,5 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor]))]};
-export const backend='http://127.0.0.1:8000/';
+export const backend='http://13.48.149.84/';
 export const image='../../public/mate.png';

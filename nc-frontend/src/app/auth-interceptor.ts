@@ -6,7 +6,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const storageService = inject(StorageService);
   const adminCode = storageService.getItem('admin_code');
   if (adminCode) {
-      console.log("asd");
     const clonedReq = req.clone({
       setHeaders: {
         'x-admin-code': adminCode
