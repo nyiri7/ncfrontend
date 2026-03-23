@@ -10,5 +10,5 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor]))]};
-export const backend='http://13.48.149.84/';
+export const backend='https://dw318mo9ijte6.cloudfront.net/';
 export const image='../../public/mate.png';
