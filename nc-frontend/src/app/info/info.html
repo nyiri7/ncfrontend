@@ -1,1 +1,10 @@
-<p>info works!</p>
+<div class="container-fluid">
+    <div class="chart-container">
+        <canvas #userChart></canvas>
+        @if (!fetched()) {
+            <div class="chart-overlay">
+              <p>Loading user data...</p>
+            </div>
+        }
+    </div>
+</div>
