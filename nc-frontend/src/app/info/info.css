@@ -1,9 +1,8 @@
 .chart-container {
-  position: relative;
-  height: 70vh;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    max-width: 99vw;
 }
 
 .chart-overlay {
